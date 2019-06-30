@@ -1,4 +1,4 @@
-Simple slideshow that refreshes the image list frequently. Made with jQuery, Fancybox, Nginx and PHP.
+Simple slideshow that refreshes the image list frequently. Made with [jQuery](https://jquery.com/), [Fancybox](http://fancyapps.com/fancybox/3/), [Nginx](https://www.nginx.com/) and [PHP](https://php.net/).
 
 ## Installation
 
@@ -9,8 +9,8 @@ apt-get update && apt-get install -y php7.0-fpm nginx-full
 cd /var/www
 git clone https://github.com/martinLE/gallerypi.git
 cd gallerypi
-sudo cp config/default /etc/nginx/sites-available/.
-sudo service nginx reload
+cp config/default /etc/nginx/sites-available/.
+service nginx reload
 mkdir -m777 src/images
 ```
 
