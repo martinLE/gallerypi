@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script>
+      var config = {
+        loop: true,
+        arrows: false,
+        toolbar: false,
+        fullScreen: {
+          autoStart: true
+        },
+        slideShow: {
+          autoStart: true,
+          speed: 3000
+        },
+      };
+      var instance = null;
+      var loadSlideshow = function() {
+        $.get('imagelist.php', function( data ) {
+          if(instance !== null) instance.close();
+          instance = $.fancybox.open(data, config);
+        }, 'json' );
+      }
+
+      loadSlideshow();
+
+      window.setInterval(() => {
+        console.log('reloading...');
+        loadSlideshow();
+      }, 12000);
+
+    </script>
+  </body>
+</html>
